@@ -1,3 +1,13 @@
+import { Text } from "../../components/Text";
+import { Title } from "../../components/Title";
+
 export function Home() {
-  return <h1>HOME</h1>;
+  return (
+    <>
+      <Title variant="l">HOME</Title>
+      <Text variant="l" bold>
+        Texto
+      </Text>
+    </>
+  );
 }
