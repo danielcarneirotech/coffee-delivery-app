@@ -1,14 +1,16 @@
+import { HTMLAttributes } from "react";
+import { ThemeType } from "../../@types/styled";
 import { TextContainer } from "./styles";
 
-interface TextProps {
+interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   variant: "l" | "m" | "s" | "xs";
   bold?: boolean;
-  children: string;
+  color?: ThemeType;
 }
 
-export function Text({ bold, variant, children }: TextProps) {
+export function Text({ bold, variant, children, color }: TextProps) {
   return (
-    <TextContainer variant={variant} bold={bold}>
+    <TextContainer color={color} variant={variant} bold={bold}>
       {children}
     </TextContainer>
   );

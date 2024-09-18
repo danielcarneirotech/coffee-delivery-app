@@ -7,6 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    background-color: ${(props) => props.theme["background"]};
+}
+
+body {
+    padding: 2rem 10rem;
 }
 
 h1 {
@@ -17,5 +22,9 @@ h1 {
 
 p {
     font-family: "Roboto", sans-serif;
+}
+
+svg {
+    background: transparent;
 }
 `;

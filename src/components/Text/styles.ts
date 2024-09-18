@@ -1,8 +1,11 @@
 import styled, { css } from "styled-components";
+import { ThemeType } from "../../@types/styled";
+import { HTMLAttributes } from "react";
 
-interface TextContainerProps {
+interface TextContainerProps extends HTMLAttributes<HTMLParagraphElement> {
   variant: "l" | "m" | "s" | "xs";
   bold?: boolean;
+  color?: ThemeType;
 }
 
 export const TextContainer = styled.p<TextContainerProps>`
@@ -29,4 +32,12 @@ export const TextContainer = styled.p<TextContainerProps>`
           `
         : null
       : null}
+
+  ${({ color }) =>
+    (props) =>
+      css`
+        color: ${props.theme[color ? color : "base-text"]};
+      `}
+
+      background-color: transparent;
 `;
